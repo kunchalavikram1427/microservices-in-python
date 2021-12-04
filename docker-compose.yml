@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: webapp:2.0
+    ports:
+      - "80:5000"
+    restart: always
+    networks: 
+     - webnet
+     
+networks:
+  webnet:
